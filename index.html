@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Timer — Pomodoro</title>
+  <meta name="description" content="A clean, dependency-free Pomodoro study timer." />
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Study Timer</h1>
+      <p class="app__subtitle">Stay focused, one session at a time.</p>
+    </header>
+
+    <nav class="modes" role="tablist" aria-label="Timer mode">
+      <button class="modes__btn is-active" data-mode="focus" role="tab" aria-selected="true">Focus</button>
+      <button class="modes__btn" data-mode="short" role="tab" aria-selected="false">Short Break</button>
+      <button class="modes__btn" data-mode="long" role="tab" aria-selected="false">Long Break</button>
+    </nav>
+
+    <section class="timer" aria-live="polite">
+      <div class="timer__ring">
+        <svg class="timer__svg" viewBox="0 0 200 200" aria-hidden="true">
+          <circle class="timer__track" cx="100" cy="100" r="90" />
+          <circle class="timer__progress" id="progressCircle" cx="100" cy="100" r="90" />
+        </svg>
+        <div class="timer__display">
+          <span class="timer__time" id="timeDisplay">25:00</span>
+          <span class="timer__label" id="modeLabel">Focus Session</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button class="controls__btn controls__btn--primary" id="startPauseBtn">Start</button>
+      <button class="controls__btn" id="resetBtn">Reset</button>
+    </div>
+
+    <section class="stats">
+      <div class="stats__item">
+        <span class="stats__value" id="sessionCount">0</span>
+        <span class="stats__label">Focus sessions completed</span>
+      </div>
+    </section>
+
+    <section class="settings">
+      <label class="settings__toggle">
+        <input type="checkbox" id="soundToggle" checked />
+        <span>Notification sound</span>
+      </label>
+      <label class="settings__toggle">
+        <input type="checkbox" id="notifyToggle" />
+        <span>Browser notifications</span>
+      </label>
+    </section>
+
+    <footer class="app__footer">
+      <p>25 / 5 / 15 — focus, short break, long break</p>
+    </footer>
+  </main>
+
+  <script src="src/js/app.js"></script>
+</body>
+</html>
