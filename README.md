@@ -18,7 +18,8 @@ A clean, dependency-free Pomodoro study timer built with plain HTML, CSS, and Ja
 No installation required. This is a static site.
 
 ```bash
-cd ~/Documents/Projects/study-timer
+git clone https://github.com/Srijjit-V/study-timer.git
+cd study-timer
 open index.html
 ```
 
